@@ -18,8 +18,21 @@
 #     artifact-name: corne_left_with_studio
 #
 ---
+#include:
+#  - board: nice_nano_v2
+#    shield: sofle_left
+#  - board: nice_nano_v2
+#    shield: sofle_right
+---
 include:
-  - board: nice_nano_v2
-    shield: sofle_left
-  - board: nice_nano_v2
-    shield: sofle_right
+  # Change the board appropriately, you can use any board
+  - board: nice_nano//zmk
+    shield: sofle_dongle
+
+  - board: nice_nano//zmk
+    shield: sofle
+    # Add these cmake-args to the peripherals you wish to use with the dongle
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+
+  - board: nice_nano//zmk
+    shield: settings_reset
