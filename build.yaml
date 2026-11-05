@@ -28,6 +28,7 @@ include:
   # Change the board appropriately, you can use any board
   - board: nice_nano//zmk
     shield: sofle_dongle
+    cmake-args: -DCONFIG_ZMK_DISPLAY=y -DCONFIG_EC11=n
 
   - board: nice_nano//zmk
     shield: sofle_left
